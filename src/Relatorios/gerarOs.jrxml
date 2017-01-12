@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="931a8b0c-fa06-47dc-80e8-3b3340845d6c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     os.`idOs` AS os_idOs,
+     os.`cartao` AS os_cartao,
+     os.`chip` AS os_chip,
+     os.`dataEntrada` AS os_dataEntrada,
+     os.`defeito` AS os_defeito,
+     os.`emitente` AS os_emitente,
+     os.`formaPagamento` AS os_formaPagamento,
+     os.`imei` AS os_imei,
+     os.`modelo` AS os_modelo,
+     os.`observacao` AS os_observacao,
+     os.`operadora` AS os_operadora,
+     os.`paraDia` AS os_paraDia,
+     os.`retiradoDia` AS os_retiradoDia,
+     os.`senha` AS os_senha,
+     os.`sinal` AS os_sinal,
+     os.`status` AS os_status,
+     os.`tipoServico` AS os_tipoServico,
+     os.`valorServico` AS os_valorServico,
+     cliente.`celular` AS cliente_celular,
+     cliente.`cpf` AS cliente_cpf,
+     cliente.`email` AS cliente_email,
+     cliente.`endereco` AS cliente_endereco,
+     cliente.`nome` AS cliente_nome,
+     cliente.`operadoraCel` AS cliente_operadoraCel,
+     cliente.`rg` AS cliente_rg,
+     cliente.`sobreNome` AS cliente_sobreNome,
+     cliente.`telefone` AS cliente_telefone
+FROM
+     `cliente` cliente INNER JOIN `os` os ON cliente.`idCliente` = os.`cliente_idCliente`]]>
+	</queryString>
+	<field name="os_idOs" class="java.lang.Integer"/>
+	<field name="os_cartao" class="java.lang.String"/>
+	<field name="os_chip" class="java.lang.String"/>
+	<field name="os_dataEntrada" class="java.lang.String"/>
+	<field name="os_defeito" class="java.lang.String"/>
+	<field name="os_emitente" class="java.lang.String"/>
+	<field name="os_formaPagamento" class="java.lang.String"/>
+	<field name="os_imei" class="java.lang.String"/>
+	<field name="os_modelo" class="java.lang.String"/>
+	<field name="os_observacao" class="java.lang.String"/>
+	<field name="os_operadora" class="java.lang.String"/>
+	<field name="os_paraDia" class="java.lang.String"/>
+	<field name="os_retiradoDia" class="java.lang.String"/>
+	<field name="os_senha" class="java.lang.String"/>
+	<field name="os_sinal" class="java.lang.String"/>
+	<field name="os_status" class="java.lang.String"/>
+	<field name="os_tipoServico" class="java.lang.String"/>
+	<field name="os_valorServico" class="java.lang.String"/>
+	<field name="cliente_celular" class="java.lang.String"/>
+	<field name="cliente_cpf" class="java.lang.String"/>
+	<field name="cliente_email" class="java.lang.String"/>
+	<field name="cliente_endereco" class="java.lang.String"/>
+	<field name="cliente_nome" class="java.lang.String"/>
+	<field name="cliente_operadoraCel" class="java.lang.String"/>
+	<field name="cliente_rg" class="java.lang.String"/>
+	<field name="cliente_sobreNome" class="java.lang.String"/>
+	<field name="cliente_telefone" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50">
+			<textField>
+				<reportElement x="486" y="0" width="69" height="20" uuid="65be0ba8-0b8f-41fc-b8c0-32dc9229e959"/>
+				<textFieldExpression><![CDATA[$F{os_idOs}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="438" y="0" width="48" height="20" uuid="5a343b4a-8bc3-4493-ade1-3d4628c93c33"/>
+				<text><![CDATA[Numero:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="341" height="50" uuid="be71621b-6da4-45a2-b0f6-b0e682c19999"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Tecnocel Assistencia Tecnica]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="377" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="10" width="35" height="20" uuid="48798301-f7c6-4c98-8032-7f44d519b2da"/>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="54" y="10" width="40" height="20" uuid="8f5af146-c516-4239-b63f-18885bb3f925"/>
+				<textFieldExpression><![CDATA[$F{cliente_nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="10" width="144" height="20" uuid="e31ed1c5-6f9e-4711-90ec-8a100231a823"/>
+				<textFieldExpression><![CDATA[$F{cliente_sobreNome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="248" y="10" width="21" height="20" uuid="83055234-a7a8-4cef-a8ea-8a4dba80ce37"/>
+				<text><![CDATA[RG:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="269" y="10" width="72" height="20" uuid="585e10e5-34ba-439c-aecd-dd0533f0a434"/>
+				<textFieldExpression><![CDATA[$F{cliente_rg}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="341" y="10" width="27" height="20" uuid="486791ed-c9fb-4192-b451-8eba8551e0a1"/>
+				<text><![CDATA[CPF:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="368" y="10" width="77" height="20" uuid="b19c5cb9-8365-450d-afe2-250ea264f8b9"/>
+				<textFieldExpression><![CDATA[$F{cliente_cpf}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="30" width="47" height="20" uuid="69c350df-6a21-4046-8c54-a551a91c8209"/>
+				<text><![CDATA[Telefone:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="64" y="30" width="100" height="20" uuid="4abd17a5-d670-422b-a336-37294142f317"/>
+				<textFieldExpression><![CDATA[$F{cliente_telefone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="50" width="37" height="20" uuid="25c5f009-1a63-440b-bcd5-306b4a0bef8e"/>
+				<text><![CDATA[Celular:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="54" y="50" width="100" height="20" uuid="3ceb9e1a-1956-4647-9eb2-c6a2c3fda3c4"/>
+				<textFieldExpression><![CDATA[$F{cliente_celular}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="248" y="30" width="40" height="20" uuid="eb7b5588-8701-44fb-980d-a4c2fc6f23a9"/>
+				<text><![CDATA[E-Mail:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="288" y="30" width="267" height="20" uuid="121571ed-b31e-4e71-951b-8e17d04bbafa"/>
+				<textFieldExpression><![CDATA[$F{cliente_email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="248" y="50" width="50" height="20" uuid="f92ca392-70a3-4ba5-b865-1bd548c634e9"/>
+				<text><![CDATA[Endereço:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="298" y="50" width="257" height="20" uuid="74e2bcb9-b069-4aa0-905f-0e540ab74c69"/>
+				<textFieldExpression><![CDATA[$F{cliente_endereco}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="70" width="57" height="20" uuid="009432ce-9a3f-4ed8-9868-8a8f4e358b87"/>
+				<text><![CDATA[Operadora:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="74" y="70" width="100" height="20" uuid="cd1c21b1-bd61-47b4-9df2-87829bd4e6ec"/>
+				<textFieldExpression><![CDATA[$F{cliente_operadoraCel}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
